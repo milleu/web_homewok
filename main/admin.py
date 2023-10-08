@@ -9,8 +9,6 @@ from main.models import Product, Category
 
 
 #admin.site.register(Student)
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_name', 'price', 'category')
-    list_filter = ('category',)
-    search_fields = ('product_name', 'description')
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('product_name', 'description')
