@@ -1,7 +1,5 @@
 from django.db import models
 
-import main.models
-
 # Create your models here.
 NULLABLE = {'blank': True, 'null': True}
 
