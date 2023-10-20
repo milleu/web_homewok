@@ -1,0 +1,42 @@
+[
+  {
+    "model": "main.category",
+    "pk": 5,
+    "fields": {
+      "product_name": "Компьютеры",
+      "description": "..."
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 6,
+    "fields": {
+      "product_name": "Наушники",
+      "description": "..."
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 7,
+    "fields": {
+      "product_name": "Телефоны",
+      "description": "..."
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 8,
+    "fields": {
+      "product_name": "Зарядные устройства",
+      "description": "..."
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 9,
+    "fields": {
+      "product_name": "Пылесосы",
+      "description": "..."
+    }
+  }
+]

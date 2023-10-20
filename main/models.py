@@ -4,17 +4,30 @@ from django.db import models
 NULLABLE = {'blank': True, 'null': True}
 
 
-class Student(models.Model):
-    first_name = models.CharField(max_length=100, verbose_name='имя')
-    last_name = models.CharField(max_length=100, verbose_name='фамилия')
-    avatar = models.ImageField(upload_to='students/', verbose_name='аватар', null=True, blank=True)
-
-    is_active = models.BooleanField(default=True, verbose_name='учится')
+class Product(models.Model):
+    product_name = models.CharField(max_length=100, verbose_name='Наименование продукта')
+    description = models.TextField(verbose_name='Описание')
+    avatar = models.ImageField(upload_to='products/', verbose_name='Превью', null=True, blank=True)
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория')
+    price = models.IntegerField(verbose_name='Цена')
+    date_of_creation = models.DateTimeField(verbose_name='Дата создания')
+    date_of_last_chanage = models.DateTimeField(verbose_name='Дата последнего изменения')
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.product_name} {self.description}'
 
     class Meta:
-        verbose_name = 'студент'
-        verbose_name_plural = 'студенты'
-        ordering = ('last_name',)
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
+
+
+class Category(models.Model):
+    category = models.CharField(max_length=100, verbose_name='Наименование категории')
+    description = models.TextField(verbose_name='Описание')
+
+    def __str__(self):
+        return f'{self.category} {self.description}'
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
